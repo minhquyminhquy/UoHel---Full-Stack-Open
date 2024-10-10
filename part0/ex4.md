@@ -8,6 +8,7 @@ browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
 Note right of browser: { "content": "HTML is easy", "date": "2023-1-1" }
 activate server
 server-->>browser: 302 Redirect: Location: /notes
+Note right of server: URL Redirect: Ask browser to make HTTP GET Request to location:/notes
 deactivate server
 
 browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
